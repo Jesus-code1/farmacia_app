@@ -1,0 +1,24 @@
+runtime: nodejs
+env: flex
+runtime_config:
+  operating_system: ubuntu22
+
+env_variables:
+  DB_HOST: "34.175.46.197"
+  DB_USER: "root"
+  DB_PASSWORD: "1234"
+  DB_NAME: "farmacia_app"
+  NODE_ENV: 'production'
+  INSTANCE_CONNECTION_NAME: 'tribal-bonito-426018-v8:europe-southwest1:bbdd-farma'
+
+
+handlers:
+  - url: /.*
+    script: auto
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
